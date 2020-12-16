@@ -1,0 +1,85 @@
+.header__top-wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #000;
+}
+
+.header__bottom-wrapper {
+  padding: 21px 0;
+}
+
+.logo {
+  margin-right: 180px;
+}
+
+.header__nav {
+  font-size: 18px; 
+  color: var(--second-color);
+  margin-right: auto;
+  font-weight: 600;
+}
+
+.header__btn-login {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 18px;
+  color: #fff;
+  padding: 5px;
+  transform: translateX(5px);
+  transition: color .2s ease-in-out, fill .2s ease-in-out;
+  &:focus {
+    @include focus;
+  }
+  &:active span {
+    color: var(--brand-auxiliary);
+    transition: color .2s ease-in-out;
+  }
+  svg {
+    path {
+      transition: fill .2s ease-in-out;
+    }
+  } 
+  &:active svg {
+    path {
+      fill: var(--brand-auxiliary);
+      transition: fill .2s ease-in-out;
+    }
+  } 
+  &:hover {
+    color: #C283F3;
+    transition: color .2s ease-in-out;
+    path {
+      fill: #C283F3;
+      transition: fill .2s ease-in-out;
+    }
+  }
+}
+
+.header__btn-login span {
+  margin-left: 8px;
+}
+
+.header__nav-list {
+  display: flex;
+}
+
+.header__nav-item:not(:last-child) {
+  margin-right: 62px;
+}
+
+.header__nav-link {
+  transition: color .2s ease-in-out;
+  &:focus {
+    @include focus;
+  }
+  &:hover {
+    color: #C283F3;
+    transition: color .2s ease-in-out;
+  }
+  &:active {
+    color: var(--brand-auxiliary);
+    transition: color .2s ease-in-out;
+  }
+}
+

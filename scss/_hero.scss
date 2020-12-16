@@ -1,0 +1,76 @@
+@keyframes pulse {
+  0% {
+    background-size: 150%;
+  }
+  50% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.hero {
+  position: relative;
+  padding-top: 75px;
+  padding-bottom: 120px;
+  font-size: 18px;
+  color: var(--second-color);
+}
+
+.hero__swiper-container {
+  position: absolute;
+  z-index: -1;
+  top: -70px;
+  left: 0;
+  width: 100%;
+  height: 700px;
+}
+
+.hero-slide {
+  background-position: center;
+  animation: pulse 90s linear infinite alternate;
+}
+
+.hero__title {
+  font-size: 72px;
+  line-height: 83px;
+  letter-spacing: -.4px;
+  font-weight: 700;
+  max-width: 575px;
+  margin-top: 0;
+  margin-bottom: 18px;
+  transform: translateX(-3px);
+}
+
+.hero__desc {
+  font-weight: 700;
+  line-height: 30px;
+  max-width: 575px;
+  margin-top: 0;
+  margin-bottom: 89px;
+}
+
+.hero__link {
+  padding: 20px;
+  font-weight: 700;
+  min-width: 314px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brand);
+  border-radius: 100px;
+  border: 3px solid transparent;
+  transition: transition .2s ease-in-out;
+  &:focus {
+    outline: none;
+    border-color: var(--brand-auxiliary);
+  }
+  &:hover {
+    border-color: #D1A9F0;
+    transition: border-color .2s ease-in-out;
+  }
+  &:active {
+    background-color: var(--brand-auxiliary);
+  }
+}

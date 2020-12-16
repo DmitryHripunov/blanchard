@@ -1,0 +1,108 @@
+.events {
+  padding: 43px 0 80px;
+}
+
+.events__title {
+  margin-bottom: 16px;
+}
+
+.events__wrapper {
+  flex-wrap: wrap;
+  // justify-content: space-between;
+}
+
+.events__slide:not(:nth-child(3n)) {
+  margin-right: 49px;
+}
+
+.events__slide {
+  position: relative;
+  height: auto;
+  padding: 300px 20px 75px 52px;
+  margin-bottom: 50px;
+  width: calc((100% - -105px) / 4) !important;
+  border: 1px solid #CACACA;
+}
+
+.events__slide-tittle {
+  margin-top: 14px;
+  margin-bottom: 2px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.events__slide-tittle span {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  color: #999999;
+  display: block;
+  letter-spacing: -.3px;
+  margin-bottom: 2px;
+}
+
+.events__slide-desc {
+  margin-top: 0;
+  line-height: 32px;
+  max-width: 400px;
+}
+
+.events__slide-link {
+  position: absolute;
+  bottom: 42px;
+  left: 50px;
+  color: var(--brand);
+  border-bottom: 1px solid var(--brand);
+  padding-bottom: 2px;
+  &:focus {
+    @include focus;
+  }
+  &:hover {
+    text-shadow: 0 0 1px var(--brand-auxiliary);
+    transition: text-shadow .2s ease-in-out;
+  }
+  &:active {
+    color: var(--brand-auxiliary);
+  }
+
+  transition: text-shadow .2s ease-in-out;
+}
+
+.events-slide-1 {
+  background: url("../img/jpg/events-1.jpg") top center / 100% 300px no-repeat;
+}
+
+.events-slide-2 {
+  background: url("../img/jpg/events-4.jpg") top center / 100% 300px no-repeat;
+}
+
+.events-slide-3 {
+  background: url("../img/jpg/events-3.jpg") top center / 100% 300px no-repeat;
+}
+
+.events-slide-4 {
+  background: url("../img/jpg/events-2.jpg") top center / 100% 300px no-repeat;
+}
+
+.events-slide-5 {
+  background: url("../img/jpg/events-3.jpg") top center / 100% 300px no-repeat;
+}
+
+.events-slide-6 {
+  background: url("../img/jpg/events-1.jpg") top center / 100% 300px no-repeat;
+}
+
+.events__btn {
+  color: var(--brand);
+  display: block;
+  font-size: 18px;
+  min-width: 188px;
+  line-height: 24px;
+  padding: 15px;
+}
+
+
+
+.events__slide--hidden {
+  display: none;
+}
