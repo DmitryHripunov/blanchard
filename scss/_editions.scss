@@ -172,6 +172,33 @@ input::-webkit-inner-spin-button {
   margin-top: 0;
   margin-bottom: -3px;
   display: inline-block;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.big-title {
+  cursor: help;
+}
+
+.editions__slide-figcaption {
+  position: relative;
+}
+
+.big-title .tooltip-content {
+  background-color: var(--main-color);
+  font-size: 14px;
+  font-weight: 400;
+  &::before {
+    background-color: var(--main-color);
+  }
+}
+
+.big-title:hover .tooltip-content {
+  display: block;
+  white-space: normal;
+  animation: tooltip .3s ease forwards;
 }
 
 .editions__slide-author {
@@ -180,7 +207,7 @@ input::-webkit-inner-spin-button {
 }
 
 .editions__slide-price {
-  display: inline-block;
+  display: block;
   float: right;
   font-style: italic;
 }

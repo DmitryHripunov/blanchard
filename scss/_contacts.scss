@@ -79,6 +79,14 @@
   margin-right: 20px;
 }
 
+.form__item-link a {
+  transition: opacity .2s ease-in;
+}
+
+.form__item-link a:hover {
+  opacity: .6;
+}
+
 .js-validate-error-label {
   position: absolute;
   bottom: -18px;

@@ -1,7 +1,7 @@
 .DS_Store
 build/
 img/
-/css/styles.min.csss 
+/css/styles.min.css
 gulpfile.js
 Thumbs.db
 *.log*

@@ -18,7 +18,9 @@
 
 .catalog__tab-link {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 46px;
+  height: 46px;
   max-height: 46px;
   &.active::after {
     position: absolute;
@@ -45,6 +47,26 @@
   &.active::after {
     opacity: 1;
   }
+}
+
+.link-france {
+  background: url("../img/png/france.png") center / cover no-repeat;
+}
+
+.link-germany {
+  background: url("../img/png/german.png") center / cover no-repeat;
+}
+
+.link-italy {
+  background: url("../img/png/italy.png") center / cover no-repeat;
+}
+
+.link-russia {
+  background: url("../img/png/russia.png") center / cover no-repeat;
+}
+
+.link-belgium {
+  background: url("../img/png/belgium.png") center / cover no-repeat;
 }
 
 .tab-pane {
@@ -77,7 +99,7 @@
   overflow: hidden;
 }
 
-.catalog__accordion-figure {
+.catalog__accordion-card {
   position: absolute;
   z-index: -10;
   width: 1px;
@@ -90,19 +112,21 @@
     opacity 0s ease-in-out;
 }
 
-.catalog__accordion-figure.figure-active {
+.catalog__accordion-card.card-active {
   position: static;
   opacity: 1;
+  width: auto;
+  height: auto;
   transform: translateY(0);
   transition: transform .25s linear, 
   opacity .3s linear;
 }
 
-.catalog__accordion-figure figcaption {
+.catalog__accordion-card figcaption {
   padding-right: 23px;
 }
 
-.catalog__accordion-figure img {
+.catalog__accordion-card img {
   margin-bottom: 26px;
 }
 
@@ -113,7 +137,7 @@
   margin-bottom: 5px;
 }
 
-.catalog__accordion-figure p {
+.catalog__accordion-card p {
   margin: 0;
   line-height: 32px;
 }

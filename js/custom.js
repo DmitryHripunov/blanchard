@@ -1,6 +1,43 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const topMenu = document.querySelectorAll('.js-header-nav');
+  const subMenu = document.querySelectorAll('.js-submenu-link');
+  const selectEl = document.querySelector('.js-choice');
+  const accordionEl = document.querySelectorAll('.js-catalog-accordion-btn');
+  const paneEl = document.querySelectorAll('.tab-pane');
+  const authorEl = document.querySelectorAll('.js-catalog-author-link');
+  const authorDesc = document.querySelectorAll('.catalog__accordion-card');
+  const dateList = document.querySelectorAll('.catalog__accordion-item');
+  const tabEl = document.querySelectorAll('.js-tab-link');
+  const eventBtnEl = document.querySelector('.js-events-btn');
+  const selector = document.querySelector("input[type='tel']");
+  const im = new Inputmask('+7 (999) 999-99-99');
+
+  // top-menu scroll 
+  topMenu.forEach((nav) => {
+    nav.addEventListener('click', function (e) {
+      e.preventDefault();
+      const sectionElem = nav.getAttribute('href');
+      document.querySelector('' + sectionElem).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  })
+
+  // menu
+  subMenu.forEach((item) => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      const sectionElem = item.getAttribute('href');
+      document.querySelector('' + sectionElem).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  })
+
   // hero swiper
   const heroSwiper = new Swiper('.hero__swiper-container', {
     effect: 'fade',
@@ -59,21 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // heroSwiper.updateSize() 
 
   // select custom
-  const selectEl = document.querySelector('.js-choice');
-
   const choicesEl = new Choices(selectEl, {
     searchEnabled: false,
     itemSelectText: '',
     removeItems: false,
     position: 'bottom',
   });
-
-
-  const accordionEl = document.querySelectorAll('.js-catalog-accordion-btn');
-  const paneEl = document.querySelectorAll('.tab-pane');
-
-  const authorEl = document.querySelectorAll('.js-catalog-author-link');
-  const authorDesc = document.querySelectorAll('.catalog__accordion-figure');
 
   // accordion handler
   accordionEl.forEach((tabBtn) => {
@@ -86,8 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // tabs handler
-  const tabEl = document.querySelectorAll('.js-tab-link');
-
   tabEl.forEach((item) => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
@@ -111,19 +137,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
       idTabLink.classList.add('tab-pane--show');
 
-      // 
-      // authorEl.forEach((el) => {
-      //   el.classList.remove('active');
-      // });
+      
+      authorEl.forEach((link) => {
+        link.classList.remove('active');
+      });
 
-      // console.log(idTabLink.childNodes)
+      authorDesc.forEach((cart) => {
+        cart.classList.remove('card-active');
+      });
 
-      // authorDesc.forEach((elem) => {
-      //   elem.classList.remove('figure-active')
-      // });
+      dateList.forEach((item) => {
+        item.classList.remove('active');
+      })
 
-    //   authorDesc[0].classList.add('figure-active');
+      const tabActive = document.querySelector('.tab-pane.tab-pane--show');
+      const findAutor = tabActive.getElementsByClassName
+      ('catalog__author-link')[0];
+      const findCard = tabActive.getElementsByClassName('catalog__accordion-card')[0];
+      const findDate = tabActive.getElementsByClassName
+      ('catalog__accordion-item')[0];
 
+      findAutor.classList.add('active');
+      findCard.classList.add('card-active');
+      findDate.classList.add('active');
     });
   });
 
@@ -132,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     authorBtn.addEventListener('click', (e) => {
       e.preventDefault();
       const authorPath = e.currentTarget.dataset.path;
-      const figureTarget = document.querySelector(`[data-target=${authorPath}]`);
+      const cardTarget = document.querySelector(`[data-target=${authorPath}]`);
 
       authorEl.forEach((el) => {
         if (el.classList.contains('active')) {
@@ -140,21 +176,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      authorDesc.forEach((figure) => {
-        figure.classList.remove('figure-active');
+      authorDesc.forEach((card) => {
+        card.classList.remove('card-active');
       });
 
       authorBtn.classList.add('active');
 
       if (authorBtn.classList.contains('active')) {
-        figureTarget.classList.add('figure-active');
+        cardTarget.classList.add('card-active');
       }
     });
   });
 
   // events handler 
-  const eventBtnEl = document.querySelector('.js-events-btn');
-
   eventBtnEl.addEventListener('click', () => {
     const eventsSlide = document.querySelectorAll('.events__slide');
 
@@ -168,9 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // mask
-  const selector = document.querySelector("input[type='tel']");
-  const im = new Inputmask('+7 (999) 999-99-99');
-
   im.mask(selector);
 
   // validate
@@ -221,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function init() {
     var myMap = new ymaps.Map('map', {
       center: [55.75846306898368, 37.601079499999905],
-      zoom: 16,
+      zoom: 15,
     });
 
     var myPlacemark = new ymaps.Placemark([55.75846306898368, 37.601079499999905], {}, {

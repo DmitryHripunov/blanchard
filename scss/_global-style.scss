@@ -149,3 +149,39 @@ figure {
 .section-swiper-btn-next:after {
   font-size: 12px;
 }
+
+.tooltip-content {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  bottom: calc(100% + 50px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 264px;
+  padding: 8px;
+  background-color: #CACACA;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  z-index: 1;
+    &::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #CACACA;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -1;
+  }
+}
+
+@keyframes tooltip {
+  100% {
+    opacity: 1;
+    bottom: calc(100% + 12px);
+  }
+}
