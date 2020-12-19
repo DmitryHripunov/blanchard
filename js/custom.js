@@ -26,18 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })
 
-  // menu
-  subMenu.forEach((item) => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-      const sectionElem = item.getAttribute('href');
-      document.querySelector('' + sectionElem).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    });
-  })
-
   // hero swiper
   const heroSwiper = new Swiper('.hero__swiper-container', {
     effect: 'fade',

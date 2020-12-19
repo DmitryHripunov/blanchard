@@ -2809,6 +2809,7 @@ figure {
     opacity: 1;
     width: auto;
     height: auto;
+    z-index: auto;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
             transform: translateY(0);
@@ -2819,7 +2820,7 @@ figure {
     transition: transform .25s linear,  opacity .3s linear,  -webkit-transform .25s linear;
 }
 
-.catalog__accordion-card figcaption {
+.catalog__figcapion {
     padding-right: 23px;
 }
 

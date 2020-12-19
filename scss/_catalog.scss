@@ -117,12 +117,13 @@
   opacity: 1;
   width: auto;
   height: auto;
+  z-index: auto;
   transform: translateY(0);
   transition: transform .25s linear, 
   opacity .3s linear;
 }
 
-.catalog__accordion-card figcaption {
+.catalog__figcapion {
   padding-right: 23px;
 }
 
